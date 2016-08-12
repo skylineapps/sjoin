@@ -1,0 +1,21 @@
+<h1>Delete User</h1>
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+<form action="/users/<%= @user.id %>" method="post">
+	<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+	<input type="hidden" name="_method" value="delete"></input>
+	<button type="submit" class="btn btn-default">delete user</button>
+</form>
+  
+
+
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
